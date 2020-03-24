@@ -1,13 +1,12 @@
 local:
     addr: 127.0.0.1:8090
-    secretkey: oncall
+    secretkey: zhiban
     runmode: debug
     cronduty: "0 0 10 * * 3"
     # cronduty: "0 */1 * * * *"
     group:
         - APP
-        - KAFKA
-        - MO
+	- SEARCH
     holiday:
         - "2020-01-24"
         - "2020-01-25"
