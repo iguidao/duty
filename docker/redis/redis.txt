@@ -1,0 +1,2 @@
+docker pull redis
+docker run -itd --name redis-latest -p 6379:6379 redis:latest

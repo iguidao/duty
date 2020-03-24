@@ -1,0 +1,2 @@
+docker pull mysql
+docker run  --name mysql-latest -v /Users/liguanghui/file/mysql/conf:/etc/mysql/conf.d -v /Users/liguanghui/file/mysql/data:/var/lib/mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD= -d mysql:latest

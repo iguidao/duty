@@ -1,0 +1,16 @@
+local:
+    addr: 127.0.0.1:8090
+    secretkey: oncall
+    runmode: debug
+    holiday:
+        - "2020-05-01"
+        - "2020-05-02"
+        - "2020-05-03"
+mysql:
+    name: oncall
+    addr: 127.0.0.1:3306
+    username: root
+    password: 11qqAAAA
+redis:
+    addr: 127.0.0.1
+    port: 6379
