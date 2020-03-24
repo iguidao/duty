@@ -13,6 +13,10 @@
 2. 用户的添加删除 --- 针对用户的一些信息简单接口
 3. 值班信息的查询  --- 查询值班信息
 
+### 启动方式
+- 修改yaml下的配置文件mysql地址，目前没有redis
+- 执行 go run migrate.go -m=true 进行数据库初始化
+- 执行 go run main.go 即可
 
 ### 联系方式
 mail: xiaohui920@sina.cn
