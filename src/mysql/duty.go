@@ -18,7 +18,7 @@ func (m *MySQL) GetAllDuty(starttime, endtime string) []model.Duty {
 	}
 	var duty []model.Duty
 
-	//m.Preload("User").Where("date_time > (?) AND date_time < (?)", start_day, end_day).Find(&duty)
-	m.Preload("User").Where("date_time > (?) AND date_time < (?)", startday, endday).Find(&duty)
+	m.Preload("User").Where("date_time BETWEEN (?) AND (?)", startday, endday).Find(&duty)
+	//m.Preload("User").Where("date_time > (?) AND date_time < (?)", startday, endday).Find(&duty)
 	return duty
 }
