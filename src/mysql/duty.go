@@ -22,3 +22,31 @@ func (m *MySQL) GetAllDuty(starttime, endtime string) []model.Duty {
 	m.Preload("User").Where("date_time > (?) AND date_time < (?)", startday, endday).Find(&duty)
 	return duty
 }
+func (m *MySQL) ExistDutyByID(id string) bool {
+	idint, err := strconv.Atoi(id)
+	if err != nil {
+		panic(err)
+	}
+	var duty model.Duty
+	if m.Where("id = ?", idint).First(&duty).RecordNotFound() {
+		log.Println("buzai")
+		return false
+	}
+	log.Println("zai")
+	return true
+
+}
+func (m *MySQL) EditDuty(id, userid string) bool {
+	idint, err := strconv.Atoi(id)
+	if err != nil {
+		panic(err)
+	}
+	useridint, err := strconv.Atoi(userid)
+	if err != nil {
+		panic(err)
+	}
+	var duty model.Duty
+	m.Where("id = ?", idint).First(&duty).Update("user_id", useridint)
+	return true
+
+}

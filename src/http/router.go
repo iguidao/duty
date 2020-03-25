@@ -24,7 +24,7 @@ func NewServer() *gin.Engine {
 	duty := r.Group("/duty/v1")
 	{
 		duty.GET("/info", v1.DutyInfo)
-		duty.PUT("/shift:id", v1.DutyShift)
+		duty.PUT("/shift/:id", v1.DutyShift)
 	}
 	staff := r.Group("/staff/v1")
 	{
